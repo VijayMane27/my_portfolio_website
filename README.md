@@ -1,5 +1,41 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Install
+
+1. clone the repository to local folder
+```shell
+git clone https://github.com/kouui/nextjs.website-init.git <your-project-name>
+cd <your-project-name>
+```
+
+2. change the project name '' in `package-lock.json` and `package.json` to your project name.
+
+`package.json`
+```json
+{
+  "name": "20220515.portfolio",
+  "version": "0.1.0",
+  "private": true,
+```
+
+`package-lock.json`
+```json
+{
+  "name": "20220515.portfolio",
+  "version": "0.1.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "20220515.portfolio",
+      "version": "0.1.0",
+```
+
+3. install the packages
+```shell
+npm install
+```
+
 ## Getting Started
 
 First, run the development server:
