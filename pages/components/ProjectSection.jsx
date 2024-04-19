@@ -15,7 +15,7 @@ const projectData = [
     title: "Teacher's Diary",
     description:
       "Developed a comprehensive Teacher's Diary app using React Native for a seamless mobile experience. Implemented features allowing teachers to save lecture notes, manage attendance records, and download the data.",
-    image: "images/projects/Teacher's-Diary.png",
+    image: "images/projects/Teacher-Diary.png",
     tag: ["All", "Mobile"],
   },
   {
