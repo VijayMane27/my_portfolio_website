@@ -19,6 +19,7 @@ const AboutSection = () => {
           <li>React</li>
           <li>Next</li>
           <li>React Native</li>
+          <li>Python</li>
         </ul>
       ),
     },
