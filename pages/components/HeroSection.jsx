@@ -7,7 +7,7 @@ import { Link as ScrollLink } from "react-scroll";
 const HeroSection = () => {
   const handleDownloadCV = () => {
     // Correcting the path to the PDF file
-    const resumeURL = "public/Resume/Vijay-Prakash-Mane.pdf";
+    const resumeURL = "public/Vijay-Prakash-Mane.pdf";
     const link = document.createElement("a");
     link.href = resumeURL;
     link.setAttribute("download", "Vijay-Prakash-Mane-Resume.pdf");
