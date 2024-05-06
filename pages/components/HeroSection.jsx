@@ -5,7 +5,6 @@ import { motion } from "framer-motion"; // Import motion from framer-motion
 import { Link as ScrollLink } from "react-scroll";
 
 const HeroSection = () => {
-
   const handleDownloadCV = () => {
     // Correcting the path to the PDF file
     const pdfPath = "/Resume/Vijay-Prakash-Mane.pdf"; // Assuming it's located in the 'public/Resume' directory

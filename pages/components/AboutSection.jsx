@@ -8,19 +8,91 @@ const AboutSection = () => {
 
   const TAB_DATA = [
     {
-      title: "skills",
+      title: "Skills",
       id: "skills",
       content: (
-        <ul className="list-disc pl-2">
-          <li>Node.js</li>
-          <li>PostgreSQL</li>
-          <li>MongoDB</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Next</li>
-          <li>React Native</li>
-          <li>Python</li>
-        </ul>
+        <div className="flex flex-wrap">
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/css.svg"
+              alt="CSS"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">CSS</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/git.svg"
+              alt="Git"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">Git</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/github.svg"
+              alt="GitHub"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">GitHub</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/nodejs.svg"
+              alt="Node.js"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">Node.js</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/postgresql.svg"
+              alt="PostgreSQL"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">PostgreSQL</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/mongodb.svg"
+              alt="MongoDB"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">MongoDB</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/javascript.svg"
+              alt="JavaScript"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">JavaScript</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/react.svg"
+              alt="React"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">React</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/nextjs.svg"
+              alt="Next"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">Next</p>
+          </div>
+          <div className="w-1/2 md:w-1/4 p-2">
+            <img
+              src="/images/icons/python.svg"
+              alt="Python"
+              className="w-12 h-12 mx-auto mb-2"
+            />
+            <p className="text-center">Python</p>
+          </div>
+        </div>
       ),
     },
     {

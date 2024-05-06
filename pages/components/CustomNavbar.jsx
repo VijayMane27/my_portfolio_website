@@ -23,10 +23,7 @@ const CustomNavbar = () => {
   const [navbaropen, setNavbarOpen] = useState(false);
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-      <Link href={"/"} className="flex items-center">
-          <img src="/logo2.png" alt="Logo" className="h-18 md:h-24" /> {/* Adjust the height as per your design */}
-        </Link>
+      <div className="flex flex-wrap items-center justify-end mx-auto px-4 py-2">
         <div className="mobile-menu block md:hidden">
           {!navbaropen ? (
             <button
