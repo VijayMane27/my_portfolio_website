@@ -1,6 +1,8 @@
-import React, { useState,useRef } from "react";
+// ProjectSection.jsx
+
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
-import { motion,useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const projectData = [
   {
@@ -41,7 +43,7 @@ const projectData = [
   },
 ];
 
-export const ProjectSection = () => {
+const ProjectSection = () => {
   const [selectedTag, setSelectedTag] = useState("All"); // Initial state for selected tag
   const ref = useRef(null);
 
@@ -57,11 +59,11 @@ export const ProjectSection = () => {
       ? projectData
       : projectData.filter((project) => project.tag.includes(selectedTag));
 
-      const cardVariants = {
-        initial: { y: 50, opacity: 0 },
-        animate: { y: 0, opacity: 1 },
-      };
-    
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
     <section>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
@@ -69,19 +71,25 @@ export const ProjectSection = () => {
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <button
-          className={`${buttonStyles("All")} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
+          className={`${buttonStyles(
+            "All"
+          )} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
           onClick={() => setSelectedTag("All")}
         >
           All
         </button>
         <button
-          className={`${buttonStyles("Web")} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
+          className={`${buttonStyles(
+            "Web"
+          )} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
           onClick={() => setSelectedTag("Web")}
         >
           Web
         </button>
         <button
-          className={`${buttonStyles("Mobile")} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
+          className={`${buttonStyles(
+            "Mobile"
+          )} rounded-full border-2 px-6 py-3 text-xl cursor-pointer`}
           onClick={() => setSelectedTag("Mobile")}
         >
           Mobile
@@ -89,15 +97,21 @@ export const ProjectSection = () => {
       </div>
 
       <div ref={ref} className="flex flex-wrap justify-between">
-        {filteredProjects.map((project,index) => (
+        {filteredProjects.map((project, index) => (
           <div key={project.id} className="w-full md:w-1/3 p-4">
-            <motion.li  key={index} variants={cardVariants} initial="initial" animate={isInview ? "animate":"initial"} transition={{duration:0.3,delay:index*0.4}}>
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-            />
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInview ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+              />
             </motion.li>
           </div>
         ))}
@@ -105,3 +119,5 @@ export const ProjectSection = () => {
     </section>
   );
 };
+
+export default ProjectSection;

@@ -1,7 +1,13 @@
+// MenuOverlay.jsx
 import React from "react";
 import NavLink from "./NavLink";
 
 const MenuOverlay = ({ links }) => {
+  // Check if links is defined and is an array before mapping over it
+  if (!Array.isArray(links)) {
+    return null; // or any fallback UI you prefer
+  }
+
   return (
     <ul className="flex flex-col py-4 items-center text-white">
       {links.map((link, index) => (

@@ -7,13 +7,12 @@ import { Link as ScrollLink } from "react-scroll";
 const HeroSection = () => {
   const handleDownloadCV = () => {
     // Correcting the path to the PDF file
-    const pdfPath = "/Resume/Vijay-Prakash-Mane.pdf"; // Assuming it's located in the 'public/Resume' directory
+    const resumeURL = "/Resume/Vijay-Prakash-Mane.pdf";
     const link = document.createElement("a");
-    link.href = pdfPath;
-    link.setAttribute("download", "Vijay-Prakash-Mane.pdf"); // Just the filename with extension
-    document.body.appendChild(link);
+    link.href = resumeURL;
+    link.setAttribute("download", "Vijay-Prakash-Mane-Resume.pdf");
     link.click();
-    document.body.removeChild(link);
+    result = "Downloading Downloaded Chek In Your";
   };
 
   return (
@@ -28,7 +27,7 @@ const HeroSection = () => {
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
               {" "}
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
             </span>
             <br />
             <TypeAnimation

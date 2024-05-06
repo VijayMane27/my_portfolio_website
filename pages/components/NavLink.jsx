@@ -1,9 +1,14 @@
+// NavLink.jsx
 import { Link as ScrollLink } from "react-scroll";
+import React from "react";
 
 const NavLink = ({ href, title }) => {
+  // Check if href is defined before calling slice method
+  const to = href ? href.slice(1) : "";
+
   return (
     <ScrollLink
-      to={href.slice(1)} // remove the '#' from href
+      to={to} // remove the '#' from href if it's defined
       spy={true}
       smooth={true}
       duration={500}

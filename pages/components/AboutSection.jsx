@@ -1,6 +1,6 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
-import Tabbutton from "./Tabbutton";
+import TabButton from "./TabButton";
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -100,7 +100,7 @@ const AboutSection = () => {
       id: "education",
       content: (
         <ul>
-          <li>Bachelor's Degree in IT</li>
+          <li>Bachelor&apos;s Degree in IT</li>
           <li>V. G. Vaze College OF Art, Commerce And Science</li>
         </ul>
       ),
@@ -142,24 +142,24 @@ const AboutSection = () => {
             to create amazing applications.
           </p>
           <div className="flex flex-row justify-start mt-8">
-            <Tabbutton
+            <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
               Skills
-            </Tabbutton>
-            <Tabbutton
+            </TabButton>
+            <TabButton
               selectTab={() => handleTabChange("certification")}
               active={tab === "certification"}
             >
               Certification
-            </Tabbutton>
-            <Tabbutton
+            </TabButton>
+            <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
               Education
-            </Tabbutton>
+            </TabButton>
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}
