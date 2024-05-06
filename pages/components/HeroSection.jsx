@@ -7,12 +7,11 @@ import { Link as ScrollLink } from "react-scroll";
 const HeroSection = () => {
   const handleDownloadCV = () => {
     // Correcting the path to the PDF file
-    const resumeURL = "/Resume/Vijay-Prakash-Mane.pdf";
+    const resumeURL = "public/Resume/Vijay-Prakash-Mane.pdf";
     const link = document.createElement("a");
     link.href = resumeURL;
     link.setAttribute("download", "Vijay-Prakash-Mane-Resume.pdf");
     link.click();
-    result = "Downloading Downloaded Chek In Your";
   };
 
   return (
