@@ -98,47 +98,46 @@ const EmailSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              <Link href={contact.href}>
-                <a
-                  target={contact.id === "mobile" ? "_self" : "_blank"}
-                  rel="noopener noreferrer"
-                  className={`group glass-panel p-8 rounded-3xl border border-white/10 ${contact.border} ${contact.glow} transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden cursor-pointer block`}
+              <a
+                href={contact.href}
+                target={contact.id === "linkedin" ? "_blank" : "_self"}
+                rel="noopener noreferrer"
+                className={`group glass-panel p-8 rounded-3xl border border-white/10 ${contact.border} ${contact.glow} transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden cursor-pointer block`}
+              >
+                {/* Background gradient on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-b ${contact.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl`} />
+
+                {/* Icon */}
+                <div
+                  className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: `${contact.color}20`, border: `1px solid ${contact.color}40`, color: contact.color }}
                 >
-                  {/* Background gradient on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-b ${contact.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl`} />
+                  {contact.icon}
+                </div>
 
-                  {/* Icon */}
-                  <div
-                    className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundColor: `${contact.color}20`, border: `1px solid ${contact.color}40`, color: contact.color }}
-                  >
-                    {contact.icon}
-                  </div>
+                {/* Badge */}
+                <span
+                  className="relative z-10 text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block"
+                  style={{ backgroundColor: `${contact.color}20`, color: contact.color, border: `1px solid ${contact.color}30` }}
+                >
+                  {contact.badge}
+                </span>
 
-                  {/* Badge */}
-                  <span
-                    className="relative z-10 text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block"
-                    style={{ backgroundColor: `${contact.color}20`, color: contact.color, border: `1px solid ${contact.color}30` }}
-                  >
-                    {contact.badge}
-                  </span>
+                {/* Display */}
+                <p className="relative z-10 text-white font-bold text-lg mb-1 group-hover:text-white transition-colors">
+                  {contact.display}
+                </p>
+                <p className="relative z-10 text-[#ADB7BE] text-sm">
+                  {contact.label === "LinkedIn" ? "View Profile" : contact.label === "Email" ? "Send an Email" : "Call or WhatsApp"}
+                </p>
 
-                  {/* Display */}
-                  <p className="relative z-10 text-white font-bold text-lg mb-1 group-hover:text-white transition-colors">
-                    {contact.display}
-                  </p>
-                  <p className="relative z-10 text-[#ADB7BE] text-sm">
-                    {contact.label === "LinkedIn" ? "View Profile" : contact.label === "Email" ? "Send an Email" : "Call or WhatsApp"}
-                  </p>
-
-                  {/* Arrow */}
-                  <div className="relative z-10 mt-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" style={{ color: contact.color }} viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </a>
-              </Link>
+                {/* Arrow */}
+                <div className="relative z-10 mt-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" style={{ color: contact.color }} viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </a>
             </motion.div>
           ))}
         </div>
