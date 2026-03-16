@@ -3,33 +3,31 @@ import React from "react";
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl }) => {
-  // Check if gitUrl is defined before attempting to destructure
-  if (!gitUrl) {
-    // Return null or any fallback UI you prefer
-    return null;
-  }
-
+const ProjectCard = ({ title, description, gitUrl }) => {
   return (
-    <div>
-      <div className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden">
-        <img
-          src={imgUrl}
-          alt={title}
-          className="object-cover object-center w-full h-full"
-        />
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
+    <div className="group relative rounded-xl bg-[#181818] border border-[#33353F] p-6 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col justify-between overflow-hidden cursor-default">
+      {/* Subtle purple gradient background that appears on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      
+      <div className="relative z-10 flex-grow">
+        <h5 className="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors duration-300">
+          {title}
+        </h5>
+        <div className="text-[#ADB7BE] text-sm leading-relaxed">
+          {description}
+        </div>
+      </div>
+      
+      {gitUrl && (
+        <div className="mt-6 relative z-10 flex justify-end">
           <Link href={gitUrl}>
-            <a className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link">
-              <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
+            <a target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-[#ADB7BE] hover:text-white hover:text-primary-400 transition-colors duration-200">
+              <CodeBracketIcon className="h-5 w-5" />
+              <span>{gitUrl.includes('github.com') ? 'View Code' : 'Live Demo'}</span>
             </a>
           </Link>
         </div>
-      </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
-        <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#ADB7BE]">{description}</p>
-      </div>
+      )}
     </div>
   );
 };

@@ -8,11 +8,11 @@ const NavLink = ({ href, title }) => {
 
   return (
     <ScrollLink
-      to={to} // remove the '#' from href if it's defined
+      to={to}
       spy={true}
       smooth={true}
       duration={500}
-      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
+      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-lg font-medium rounded md:p-0 hover:text-white hover:text-purple-400 transition-colors duration-300 cursor-pointer"
     >
       {title}
     </ScrollLink>

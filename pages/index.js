@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>title</title>
-        <meta name="description" content=" " />
+        <title>Vijay Mane | Full Stack Developer</title>
+        <meta name="description" content="Portfolio of Vijay Mane – Full Stack Developer specializing in React, Next.js, Node.js, and scalable web applications." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col bg-[#121212]">

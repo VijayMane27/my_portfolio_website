@@ -22,15 +22,24 @@ const navLinks = [
 const CustomNavbar = () => {
   const [navbaropen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex flex-wrap items-center justify-end mx-auto px-4 py-2">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <div className="flex flex-wrap items-center justify-between mx-auto px-8 py-4 max-w-7xl">
+        <Link 
+          to="home" 
+          spy={true} 
+          smooth={true} 
+          duration={500} 
+          className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 cursor-pointer"
+        >
+          VIJAY MANE
+        </Link>
         <div className="mobile-menu block md:hidden">
           {!navbaropen ? (
             <button
               onClick={() => {
                 setNavbarOpen(true);
               }}
-              className=" flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              className=" flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white transition-colors"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
@@ -39,7 +48,7 @@ const CustomNavbar = () => {
               onClick={() => {
                 setNavbarOpen(false);
               }}
-              className=" flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              className=" flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white transition-colors"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
